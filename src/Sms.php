@@ -121,6 +121,8 @@ class Sms
 
         $response = $http->sendHttp('POST', 'sms/send', $this->headers, $data);
 
+        $this->$messages = [];
+        
         if ($response->status == 200) {
             return json_decode($response->message);
         } else {
