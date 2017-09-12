@@ -2,7 +2,7 @@
 
 namespace Descom\Sms;
 
-use Descom\Sms\Auth\AuthUser as Auth;
+use Descom\Sms\Auth\AuthInterface as Auth;
 use Descom\Sms\Exceptions\MessageTextAlreadyExits;
 use Descom\Sms\Exceptions\RequestFail;
 use Descom\Sms\Http\Http;

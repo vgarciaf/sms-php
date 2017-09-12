@@ -2,7 +2,7 @@
 
 namespace Descom\Sms\Auth;
 
-class AuthUser
+class AuthUser implements AuthInterface
 {
     /**
      * Define the username for auth.
