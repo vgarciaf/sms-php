@@ -1,3 +1,6 @@
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/descom/php-sms?style=flat-square)](https://packagist.org/packages/descom/php-sms)
+[![Build Status](https://img.shields.io/travis/descom/php-sms/master.svg?style=flat-square)](https://travis-ci.org/descom/php-sms)
+[![StyleCI](https://styleci.io/repos/103265304/shield)](https://styleci.io/repos/103265304)
 # PHP Descom SMS
 
 This library permit send SMS through of [Platform Descom SMS](https://www.descomsms.com)
