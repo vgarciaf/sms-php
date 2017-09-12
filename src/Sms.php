@@ -51,7 +51,7 @@ class Sms
      *
      * @return $this
      */
-    public function setDryrun(bool $dryrun)
+    public function setDryrun($dryrun)
     {
         $this->dryrun = $dryrun;
 
