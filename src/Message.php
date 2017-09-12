@@ -27,25 +27,21 @@ class Message
      */
     private $sender;
 
-
     /**
-         * Set the "destination" of the message.
-         *
-         * @param  string|array $destination
-         * @return $this
-         */
+     * Set the "destination" of the message.
+     *
+     * @param string|array $destination
+     *
+     * @return $this
+     */
     public function addDestintation($destination)
     {
         $destinations = (array) $destination;
 
-        foreach ($destinations as $destination)
-        {
-            if (in_array($destinations, $this->destinations))
-            {
+        foreach ($destinations as $destination) {
+            if (in_array($destinations, $this->destinations)) {
                 throw DestinationAlreadyExits::create($destination);
-            }
-            else
-            {
+            } else {
                 $this->destinations[] = $destination;
             }
         }
@@ -54,11 +50,12 @@ class Message
     }
 
     /**
-         * Set the "text" of the message.
-         *
-         * @param  string $message
-         * @return $this
-         */
+     * Set the "text" of the message.
+     *
+     * @param string $message
+     *
+     * @return $this
+     */
     public function setText(string $text)
     {
         $this->text = $text;
@@ -67,11 +64,12 @@ class Message
     }
 
     /**
-         * Set the "sender" of the message.
-         *
-         * @param  string $sender
-         * @return $this
-         */
+     * Set the "sender" of the message.
+     *
+     * @param string $sender
+     *
+     * @return $this
+     */
     public function setSender(string $sender)
     {
         $this->sender = $sender;
@@ -80,23 +78,21 @@ class Message
     }
 
     /**
-         * Get array to send message.
-         *
-         * @return array
-         */
+     * Get array to send message.
+     *
+     * @return array
+     */
     public function getArray()
     {
         $response = [
-            'text' => $this->text,
-            'destinations' => $this->destinations
+            'text'         => $this->text,
+            'destinations' => $this->destinations,
         ];
 
-        if (isset($sender) && $sender)
-        {
+        if (isset($sender) && $sender) {
             $response['sender'] = $sender;
         }
 
         return $response;
     }
-
 }
