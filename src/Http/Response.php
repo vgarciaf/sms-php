@@ -2,10 +2,6 @@
 
 namespace Descom\Sms\Http;
 
-use GuzzleHttp\Psr7;
-use GuzzleHttp\Exception\ClientException;
-use GuzzleHttp\Exception\RequestException;
-
 class Response
 {
     /**

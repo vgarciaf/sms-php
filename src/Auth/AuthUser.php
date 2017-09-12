@@ -5,43 +5,43 @@ namespace Descom\Sms\Auth;
 class AuthUser
 {
     /**
-         * Define the username for auth.
-         *
-         * @var string $auth
-         */
+     * Define the username for auth.
+     *
+     * @var string
+     */
     private $username;
 
     /**
-         * Define the password for auth.
-         *
-         * @var string $auth
-         */
+     * Define the password for auth.
+     *
+     * @var string
+     */
     private $password;
 
     /**
-         * Create a new authuser instance.
-         *
-         * @param  string $username
-         * @param  string $password
-         * @return void
-         */
+     * Create a new authuser instance.
+     *
+     * @param string $username
+     * @param string $password
+     *
+     * @return void
+     */
     public function __construct(string $username, string $password)
     {
-            $this->username = $username;
-            $this->password = $password;
+        $this->username = $username;
+        $this->password = $password;
     }
 
     /**
-         * Get headers for Auth
-         *
-         * @return array
-         */
+     * Get headers for Auth.
+     *
+     * @return array
+     */
     public function headers()
     {
         return [
             'DSMS-User' => $this->username,
-            'DSMS-Pass' => $this->password
+            'DSMS-Pass' => $this->password,
         ];
     }
-
 }

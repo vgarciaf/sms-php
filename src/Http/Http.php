@@ -2,7 +2,6 @@
 
 namespace Descom\Sms\Http;
 
-use GuzzleHttp\Psr7;
 use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Exception\RequestException;
 
@@ -11,14 +10,15 @@ class Http
     private $debug = false;
 
     /**
-         * Send Request to API.
-         *
-         * @param  string $verb
-         * @param  string $path
-         * @param  array  $headers
-         * @param  array  $data
-         * @return \Descom\Sms\Http\Response
-         */
+     * Send Request to API.
+     *
+     * @param string $verb
+     * @param string $path
+     * @param array  $headers
+     * @param array  $data
+     *
+     * @return \Descom\Sms\Http\Response
+     */
     public function sendHttp(string $verb, string $path, array $headers, array $data = [])
     {
         $client = new \GuzzleHttp\Client();
@@ -27,16 +27,15 @@ class Http
 
         $httpData = [
             'headers'   => $headers,
-            'debug'     => $this->debug
+            'debug'     => $this->debug,
         ];
 
-        if (count($data)>0)
-        {
+        if (count($data) > 0) {
             $httpData['json'] = $data;
         }
 
         try {
-            $result = $client->request($verb, 'https://api.descomsms.com/api/' . $path, $httpData);
+            $result = $client->request($verb, 'https://api.descomsms.com/api/'.$path, $httpData);
             $response->status = $result->getStatusCode();
             $response->message = $result->getBody()->getContents();
         } catch (ClientException $e) {
@@ -49,5 +48,4 @@ class Http
 
         return $response;
     }
-
 }
