@@ -2,7 +2,9 @@
 
 namespace Descom\Sms\Test;
 
+
 use Descom\Sms\Auth\AuthUser;
+use PHPUnit\Framework\TestCase;
 use Descom\Sms\Exceptions\RequestFail;
 use Descom\Sms\Sms;
 
