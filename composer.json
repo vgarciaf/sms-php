@@ -1,5 +1,5 @@
 {
-    "name": "descom/phpsms",
+    "name": "descom/php-sms",
     "description": "Library to send SMS through of Descom SMS Platform",
     "type": "library",
     "license": "MIT",
