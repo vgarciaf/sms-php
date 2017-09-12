@@ -4,7 +4,7 @@ namespace Descom\Sms\Exceptions;
 
 use InvalidArgumentException;
 
-class MessageTextAlreadyExits extends InvalidArgumentException
+class MessageTextAlreadyExists extends InvalidArgumentException
 {
     public static function create(string $text)
     {
