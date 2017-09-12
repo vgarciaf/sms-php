@@ -1,0 +1,23 @@
+{
+    "name": "descom/phpsms",
+    "description": "Library to send SMS through of Descom SMS Platform",
+    "type": "library",
+    "license": "MIT",
+    "keywords": ["sms", "php", "descom"],
+    "homepage": "https://www.descomsms.com",
+    "authors": [
+        {
+            "name": "Descom Soporte",
+            "email": "soporte@descom.es"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.0",
+        "guzzlehttp/guzzle": "^6.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Descom\\Sms\\": "src/"
+        }
+    }
+}
