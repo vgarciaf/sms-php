@@ -8,13 +8,6 @@ use Descom\Sms\Sms;
 
 class SmsTest extends TestCase
 {
-    protected $sms;
-
-    public function setUp()
-    {
-        parent::setUp();
-    }
-
     /** @test */
     public function request_fail_if_send_bad_auth()
     {
