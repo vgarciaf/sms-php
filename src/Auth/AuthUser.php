@@ -26,7 +26,7 @@ class AuthUser
      *
      * @return void
      */
-    public function __construct(\string $username, \string $password)
+    public function __construct($username, $password)
     {
         $this->username = $username;
         $this->password = $password;

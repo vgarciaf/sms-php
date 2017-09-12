@@ -19,7 +19,7 @@ class Http
      *
      * @return \Descom\Sms\Http\Response
      */
-    public function sendHttp(string $verb, string $path, array $headers, array $data = [])
+    public function sendHttp($verb, $path, array $headers, array $data = [])
     {
         $client = new \GuzzleHttp\Client();
 

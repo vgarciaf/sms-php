@@ -6,7 +6,7 @@ use Exception;
 
 class RequestFail extends Exception
 {
-    public static function create(string $message)
+    public static function create($message)
     {
         return new static($message);
     }

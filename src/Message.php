@@ -56,7 +56,7 @@ class Message
      *
      * @return $this
      */
-    public function setText(string $text)
+    public function setText($text)
     {
         $this->text = $text;
 
@@ -70,7 +70,7 @@ class Message
      *
      * @return $this
      */
-    public function setSender(string $sender)
+    public function setSender($sender)
     {
         $this->sender = $sender;
 
