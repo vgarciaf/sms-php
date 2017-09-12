@@ -1,9 +1,10 @@
 <?php
+
 namespace Descom\Sms\Test;
 
-use Descom\Sms\Sms;
 use Descom\Sms\Auth\AuthUser;
 use Descom\Sms\Exceptions\RequestFail;
+use Descom\Sms\Sms;
 
 class SmsTest extends TestCase
 {
