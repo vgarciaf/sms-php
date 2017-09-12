@@ -6,12 +6,14 @@ You can create a free account and buy credits to send SMS.
 
 Please visit te [API documentation](https://api.descomsms.com)
 
+## Install
+
+You can install it with composer:
+
+```bash
+composer require descom/php-sms
+```
+
 ## Examples
 
-Yo can access to example folder
-
-## Todo
-
-* Make test
-* Documentation
-* Verify status async
+You can see folder examples for use.
