@@ -57,16 +57,15 @@ or with an Array:
 //...
 
 $message->addDestination([
-    'replace_by_number_mobile1',
-    'replace_by_number_mobile2'
+    'mobile_number_1',
+    'mobile_number_2'
 ]);
 //...
 ```
 
-### Get balance of your account
+### Check your account balance
 
-You need balance to send SMS, perhaps you wish know your current balance. For this
-case you have a function `getBalance`. See this example:
+The function `getBalance` allows you to check your SMS balance, this is your credit available. Example:
 
 ```php
 $sms = new Sms(new AuthUser('replace_by_your_usernme', 'replace_by_your_password'));
@@ -76,16 +75,14 @@ $balance = $sms->getBalance();
 echo 'Your balance is '.$balance."\n";
 ```
 
+### Setup your sender ID
 
-#### Define de sender of message
-
-You can set de sender of message with the function `setSender` in the
-class `Descom\Sms\Sms`
+Alphanumeric sender ID allows you to set your name or business brand as the sender ID. Use the function `setSender` at `Descom\Sms\Sms` class
 
 ```php
 $sms->setSender('replace_by_sender_of_message');
 ```
-Your sender must be register in the platform.
+Note your sender ID should previously be added in your Descom SMS account setup.
 
 #### Dryrun the send
 
@@ -98,4 +95,4 @@ $sms->setDryrun(true);
 
 ## Examples
 
-You can see folder examples for use.
+See folder examples for use.
