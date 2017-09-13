@@ -84,14 +84,14 @@ $sms->setSender('replace_by_sender_of_message');
 ```
 Note your sender ID should previously be added in your Descom SMS account setup.
 
-#### Dryrun the send
+### Test your SMS sending application for free
 
-If you can testing you can use this function `setDryrun` in the class `Descom\Sms\Sms` and set to `true`
+Test your SMS sending application at no cost by using function `setDryrun` in the class `Descom\Sms\Sms` and set to `true`
 
 ```php
 $sms->setDryrun(true);
 ```
-
+Dryrun just simulates SMS sending; no message will be sent out and no SMS credit will be deducted from your account.
 
 ## Examples
 
