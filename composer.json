@@ -1,6 +1,6 @@
 {
     "name": "descom/php-sms",
-    "description": "Library to send SMS through of Descom SMS Platform",
+    "description": "Build your SMS application with PHP, easy SMS sending and worldwide coverage",
     "type": "library",
     "license": "MIT",
     "keywords": ["sms", "php", "descom"],
