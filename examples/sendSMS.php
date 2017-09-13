@@ -15,7 +15,7 @@ $sms = new Sms(new AuthUser($argv[1], $argv[2]));
 
 $message = new Message();
 
-$message->addDestintation($argv[3])->setText($argv[4]);
+$message->addDestination($argv[3])->setText($argv[4]);
 
 $result = $sms->addMessage($message)
         ->setDryrun(true)

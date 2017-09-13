@@ -32,7 +32,7 @@ $sms = new Sms(new AuthUser('your_username', 'your_password'));
 
 $message = new Message();
 
-$message->addDestintation('mobile_number')->setText('message_text');
+$message->addDestination('mobile_number')->setText('message_text');
 
 $result = $sms->addMessage($message)
         ->setDryrun(true)
@@ -40,14 +40,14 @@ $result = $sms->addMessage($message)
 ```
 
 ### Send multiple SMS
-You can send multiple SMS in one go, function `addDestintation`:
+You can send multiple SMS in one go, function `addDestination`:
 
 
 ```php
 //...
 
-$message->addDestintation('mobile_number_1')
-        ->addDestintation('mobile_number_2');
+$message->addDestination('mobile_number_1')
+        ->addDestination('mobile_number_2');
 
 /...
 ```
@@ -57,7 +57,7 @@ or with an Array:
 ```php
 //...
 
-$message->addDestintation([
+$message->addDestination([
     'replace_by_number_mobile1',
     'replace_by_number_mobile2'
 ]);

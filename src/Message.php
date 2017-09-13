@@ -34,7 +34,7 @@ class Message
      *
      * @return $this
      */
-    public function addDestintation($destination)
+    public function addDestination($destination)
     {
         $destinations = (array) $destination;
 
