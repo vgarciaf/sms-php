@@ -95,4 +95,4 @@ $sms->setDryrun(true);
 
 ## Examples
 
-See folder examples for use.
+Examples available at folder Examples.
