@@ -2,7 +2,6 @@
 [![StyleCI](https://styleci.io/repos/103265304/shield)](https://styleci.io/repos/103265304)
 [![Latest Stable Version](https://poser.pugx.org/descom/php-sms/version?format=flat-square)](https://packagist.org/packages/descom/php-sms)
 [![Total Downloads](https://poser.pugx.org/descom/php-sms/downloads?format=flat-square)](https://packagist.org/packages/descom/php-sms)
-[![Latest Unstable Version](https://poser.pugx.org/descom/php-sms/v/unstable?format=flat-square)](//packagist.org/packages/descom/php-sms)
 [![License](https://poser.pugx.org/descom/php-sms/license?format=flat-square)](https://packagist.org/packages/descom/php-sms)
 # PHP SMS sending
 
@@ -32,7 +31,7 @@ $sms = new Sms(new AuthUser('your_username', 'your_password'));
 
 $message = new Message();
 
-$message->addDestintation('mobile_number')->setText('message_text');
+$message->addDestination('mobile_number')->setText('message_text');
 
 $result = $sms->addMessage($message)
         ->setDryrun(true)
@@ -40,16 +39,16 @@ $result = $sms->addMessage($message)
 ```
 
 ### Send multiple SMS
-You can send multiple SMS in one go, function `addDestintation`:
+You can send multiple SMS in one go, function `addDestination`:
 
 
 ```php
 //...
 
-$message->addDestintation('mobile_number_1')
-        ->addDestintation('mobile_number_2');
+$message->addDestination('mobile_number_1')
+        ->addDestination('mobile_number_2');
 
-/...
+//...
 ```
 
 or with an Array:
@@ -57,11 +56,11 @@ or with an Array:
 ```php
 //...
 
-$message->addDestintation([
+$message->addDestination([
     'replace_by_number_mobile1',
     'replace_by_number_mobile2'
 ]);
-/...
+//...
 ```
 
 ### Get balance of your account

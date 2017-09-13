@@ -27,7 +27,7 @@ class SmsTest extends TestCase
 
         $message = new Message();
 
-        $message->addDestintation('6666666')->setText('test sms text');
+        $message->addDestination('6666666')->setText('test sms text');
 
         $result = $sms->addMessage($message)
                 ->setDryrun(true)
