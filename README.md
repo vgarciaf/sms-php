@@ -4,13 +4,13 @@
 [![Total Downloads](https://poser.pugx.org/descom/php-sms/downloads?format=flat-square)](https://packagist.org/packages/descom/php-sms)
 [![Latest Unstable Version](https://poser.pugx.org/descom/php-sms/v/unstable?format=flat-square)](//packagist.org/packages/descom/php-sms)
 [![License](https://poser.pugx.org/descom/php-sms/license?format=flat-square)](https://packagist.org/packages/descom/php-sms)
-# PHP Descom SMS
+# PHP SMS sending
 
-This library permit send SMS through of [Platform Descom SMS](https://www.descomsms.com)
+SMS Library for sending text messages to mobile numbers worldwide from your own application via [Descom SMS](https://www.descomsms.com) gateway.
 
-You can create a free account and buy credits to send SMS.
+Create your free account at [Descom SMS](https://www.descomsms.com) and buy credits form SMS sending when required.
 
-Please visit te [API documentation](https://api.descomsms.com)
+Our [API documentation](https://api.descomsms.com) is available [here](https://api.descomsms.com). Also, we will be happy to assist you at soporte@descom.es for further info on your SMS project.  
 
 ## Install
 
