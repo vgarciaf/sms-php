@@ -2,7 +2,6 @@
 [![StyleCI](https://styleci.io/repos/103265304/shield)](https://styleci.io/repos/103265304)
 [![Latest Stable Version](https://poser.pugx.org/descom/php-sms/version?format=flat-square)](https://packagist.org/packages/descom/php-sms)
 [![Total Downloads](https://poser.pugx.org/descom/php-sms/downloads?format=flat-square)](https://packagist.org/packages/descom/php-sms)
-[![Latest Unstable Version](https://poser.pugx.org/descom/php-sms/v/unstable?format=flat-square)](//packagist.org/packages/descom/php-sms)
 [![License](https://poser.pugx.org/descom/php-sms/license?format=flat-square)](https://packagist.org/packages/descom/php-sms)
 # PHP SMS sending
 
@@ -49,7 +48,7 @@ You can send multiple SMS in one go, function `addDestination`:
 $message->addDestination('mobile_number_1')
         ->addDestination('mobile_number_2');
 
-/...
+//...
 ```
 
 or with an Array:
@@ -61,7 +60,7 @@ $message->addDestination([
     'replace_by_number_mobile1',
     'replace_by_number_mobile2'
 ]);
-/...
+//...
 ```
 
 ### Get balance of your account
