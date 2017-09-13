@@ -21,22 +21,22 @@ class Message
     private $destinations = [];
 
     /**
-     * The sender of the message.
+     * The senderid of the message.
      *
      * @var string
      */
-    private $sender;
+    private $senderid;
 
     /**
      * Set the "destination" of the message.
      *
-     * @param string|array $destination
+     * @param string|array $to
      *
      * @return $this
      */
-    public function addDestination($destination)
+    public function addTo($to)
     {
-        $destinations = (array) $destination;
+        $destinations = (array) $to;
 
         foreach ($destinations as $destination) {
             if (in_array($destinations, $this->destinations)) {
@@ -64,15 +64,15 @@ class Message
     }
 
     /**
-     * Set the "sender" of the message.
+     * Set the "senderid" of the message.
      *
-     * @param string $sender
+     * @param string $senderid
      *
      * @return $this
      */
-    public function setSender($sender)
+    public function setSenderId($senderid)
     {
-        $this->sender = $sender;
+        $this->senderid = $senderid;
 
         return $this;
     }
@@ -86,11 +86,11 @@ class Message
     {
         $response = [
             'text'         => $this->text,
-            'destinations' => $this->destinations,
+            'to'           => $this->destinations,
         ];
 
-        if (isset($sender) && $sender) {
-            $response['sender'] = $sender;
+        if (isset($senderid) && $senderid) {
+            $response['senderid'] = $senderid;
         }
 
         return $response;

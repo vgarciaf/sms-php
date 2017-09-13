@@ -31,7 +31,7 @@ $sms = new Sms(new AuthUser('your_username', 'your_password'));
 
 $message = new Message();
 
-$message->addDestination('mobile_number')->setText('message_text');
+$message->addTo('mobile_number')->setText('message_text');
 
 $result = $sms->addMessage($message)
         ->setDryrun(true)
@@ -39,14 +39,14 @@ $result = $sms->addMessage($message)
 ```
 
 ### Send multiple SMS
-You can send multiple SMS in one go, function `addDestination`:
+You can send multiple SMS in one go, function `addTo`:
 
 
 ```php
 //...
 
-$message->addDestination('mobile_number_1')
-        ->addDestination('mobile_number_2');
+$message->addTo('mobile_number_1')
+        ->addTo('mobile_number_2');
 
 //...
 ```
@@ -56,7 +56,7 @@ or with an Array:
 ```php
 //...
 
-$message->addDestination([
+$message->addTo([
     'mobile_number_1',
     'mobile_number_2'
 ]);
@@ -77,10 +77,10 @@ echo 'Your balance is '.$balance."\n";
 
 ### Setup your sender ID
 
-Alphanumeric sender ID allows you to set your name or business brand as the sender ID. Use the function `setSender` at `Descom\Sms\Sms` class
+Alphanumeric sender ID allows you to set your name or business brand as the sender ID. Use the function `setSenderId` at `Descom\Sms\Sms` class
 
 ```php
-$sms->setSender('replace_by_sender_of_message');
+$sms->setSenderId('replace_by_sender_of_message');
 ```
 Note your sender ID should previously be added in your Descom SMS account setup.
 
