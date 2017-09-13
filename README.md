@@ -39,7 +39,7 @@ $result = $sms->addMessage($message)
         ->send();
 ```
 
-#### Send multiple SMS
+### Send multiple SMS
 You can send multiple SMS in one go, function `addDestintation`:
 
 
