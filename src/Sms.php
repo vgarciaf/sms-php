@@ -94,7 +94,7 @@ class Sms
 
             return $data->balance;
         } else {
-            throw new RequestFail($response->message);
+            throw new RequestFail($response->message, $response->status);
         }
     }
 
@@ -126,7 +126,7 @@ class Sms
         if ($response->status == 200) {
             return json_decode($response->message);
         } else {
-            throw new RequestFail($response->message);
+            throw new RequestFail($response->message, $response->status);
         }
     }
 }
