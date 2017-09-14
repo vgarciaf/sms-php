@@ -94,8 +94,7 @@ class Sms
 
             return $data->balance;
         } else {
-            $exception = new RequestFail($response->message, $response->status);
-            throw $exception;
+            throw new RequestFail($response->message, $response->status);
         }
     }
 

@@ -65,7 +65,6 @@ class SmsTest extends TestCase
         } catch (RequestFail $e) {
             $this->assertEquals($e->getCode(), 401);
         }
-
     }
 
     /** @test */

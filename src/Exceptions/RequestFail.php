@@ -10,5 +10,4 @@ class RequestFail extends Exception
     {
         return new static($message);
     }
-
 }
