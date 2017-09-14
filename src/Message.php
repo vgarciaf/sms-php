@@ -21,11 +21,11 @@ class Message
     private $destinations = [];
 
     /**
-     * The senderid of the message.
+     * The senderID of the message.
      *
      * @var string
      */
-    private $senderid;
+    private $senderID;
 
     /**
      * Set the "destination" of the message.
@@ -64,15 +64,15 @@ class Message
     }
 
     /**
-     * Set the "senderid" of the message.
+     * Set the "senderID" of the message.
      *
-     * @param string $senderid
+     * @param string $senderID
      *
      * @return $this
      */
-    public function setSenderId($senderid)
+    public function setsenderID($senderID)
     {
-        $this->senderid = $senderid;
+        $this->senderID = $senderID;
 
         return $this;
     }
@@ -89,8 +89,8 @@ class Message
             'to'           => $this->destinations,
         ];
 
-        if (isset($senderid) && $senderid) {
-            $response['senderid'] = $senderid;
+        if (isset($senderID) && $senderID) {
+            $response['senderID'] = $senderID;
         }
 
         return $response;
