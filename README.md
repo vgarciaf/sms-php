@@ -75,6 +75,19 @@ $balance = $sms->getBalance();
 echo 'Your balance is '.$balance."\n";
 ```
 
+### Get list of senderID authorized
+
+The function `getSenderID` allows you get the list of senderID authorized. Example:
+
+```php
+$sms = new Sms(new AuthUser('replace_by_your_usernme', 'replace_by_your_password'));
+
+$senderID = $sms->getSenderID();
+
+echo 'Your balance is '.PHP_EOL;
+print_r($senderID);
+```
+
 ### Setup your sender ID
 
 Alphanumeric sender ID allows you to set your name or business brand as the sender ID. Use the function `setSenderID` at `Descom\Sms\Sms` class

@@ -100,4 +100,30 @@ class SmsTest extends TestCase
 
         $this->assertGreaterThan(1, $result->id);
     }
+
+    /** @test */
+    public function test_if_senderID_info_is_authorized()
+    {
+        $sms = new Sms($this->authOK);
+
+        $senderID = $sms->getSenderID();
+
+        $this->assertContains(
+            'info',
+            $senderID
+        );
+    }
+
+    /** @test */
+    public function test_if_senderID_perverso_is_not_authorized()
+    {
+        $sms = new Sms($this->authOK);
+
+        $senderID = $sms->getSenderID();
+
+        $this->assertNotContains(
+            'perverso',
+            $senderID
+        );
+    }
 }

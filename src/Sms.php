@@ -99,6 +99,26 @@ class Sms
     }
 
     /**
+     * Get the list with authorized senderID.
+     *
+     * @return array
+     */
+    public function getSenderID()
+    {
+        $http = new Http();
+
+        $response = $http->sendHttp('GET', 'senderID', $this->headers);
+
+        if ($response->status == 200) {
+            $data = json_decode($response->message);
+
+            return $data;
+        } else {
+            throw new RequestFail($response->message, $response->status);
+        }
+    }
+
+    /**
      * Send SMS's to the platform.
      *
      * @return object
