@@ -67,9 +67,11 @@ class Sms
      */
     public function addMessage(Message $message)
     {
+        $message_text = $message->getText();
+
         foreach ($this->messages as $cur_message) {
-            if ($cur_message->text == $message->text) {
-                throw new MessageTextAlreadyExits($message->text);
+            if ($cur_message->getText() == $message_text) {
+                throw new MessageTextAlreadyExits($message_text);
             }
         }
 

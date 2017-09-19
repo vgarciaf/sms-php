@@ -64,6 +64,16 @@ class Message
     }
 
     /**
+     * Get the "text" of the message.
+     *
+     * @return string
+     */
+    public function getText()
+    {
+        return $this->text;
+    }
+
+    /**
      * Set the "senderID" of the message.
      *
      * @param string $senderID
