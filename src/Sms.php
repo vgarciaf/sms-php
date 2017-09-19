@@ -26,6 +26,13 @@ class Sms
     private $dryrun = false;
 
     /**
+     * Define if text must be sanitize to GSM 7bits.
+     *
+     * @var bool
+     */
+    private $sanitize = false;
+
+    /**
      * Define if then messages for sent.
      *
      * @var array
@@ -54,6 +61,20 @@ class Sms
     public function setDryrun($dryrun)
     {
         $this->dryrun = $dryrun;
+
+        return $this;
+    }
+
+    /**
+     * Set if text must be sanitize to GSM 7bits.
+     *
+     * @param bool $sanitize
+     *
+     * @return $this
+     */
+    public function setSanitize($sanitize)
+    {
+        $this->sanitize = $sanitize;
 
         return $this;
     }
@@ -141,6 +162,9 @@ class Sms
             $data['dryrun'] = true;
         }
 
+        if (isset($this->sanitize) && $this->sanitize) {
+            $data['sanitize'] = true;
+        }
         $response = $http->sendHttp('POST', 'sms/send', $this->headers, $data);
 
         $this->messages = [];
