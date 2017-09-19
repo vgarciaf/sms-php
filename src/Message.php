@@ -89,8 +89,8 @@ class Message
             'to'           => $this->destinations,
         ];
 
-        if (isset($senderID) && $senderID) {
-            $response['senderID'] = $senderID;
+        if (isset($this->senderID) && $this->senderID) {
+            $response['senderID'] = $this->senderID;
         }
 
         return $response;
