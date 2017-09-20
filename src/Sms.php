@@ -70,7 +70,7 @@ class Sms
      * @var string
      */
      public function setApp($app)
-    {
+     {
         $this->app = $app;
 
         $this->headers = array_merge($this->headers, [
