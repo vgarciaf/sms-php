@@ -58,7 +58,7 @@ class Sms
         $this->headers = array_merge($this->headers, $auth->headers());
 
         $this->headers = array_merge($this->headers, [
-            'DSMS-App' => $this->app
+            'DSMS-App' => $this->app,
         ]);
     }
 
@@ -70,15 +70,15 @@ class Sms
      * @var string
      */
      public function setApp($app)
-     {
-         $this->app = $app;
+    {
+        $this->app = $app;
 
-         $this->headers = array_merge($this->headers, [
-             'DSMS-App' => $this->app
-         ]);
+        $this->headers = array_merge($this->headers, [
+        'DSMS-App' => $this->app,
+        ]);
 
-         return $this;
-     }
+        return $this;
+    }
 
     /**
      * Set if the sent is dryrun.
