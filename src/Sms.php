@@ -74,7 +74,7 @@ class Sms
         $this->app = $app;
 
         $this->headers = array_merge($this->headers, [
-        'DSMS-App' => $this->app,
+            'DSMS-App' => $this->app,
         ]);
 
         return $this;
