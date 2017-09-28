@@ -24,9 +24,11 @@ class Http
 
         if ($version[0] === '6') {
             $sms = new GuzzleV6();
+
             return $sms->sendHttp($verb, $path, $headers, $data);
         } elseif ($version[0] === '5') {
             $sms = new GuzzleV5();
+            
             return $sms->sendHttp($verb, $path, $headers, $data);
         }
     }
