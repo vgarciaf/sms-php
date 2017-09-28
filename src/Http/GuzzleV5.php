@@ -34,20 +34,18 @@ class GuzzleV5
             $httpData['json'] = $data;
         }
 
-        //try {
-            $result = $client->createRequest($verb, 'https://api.descomsms.com/api/'.$path, $httpData);
-            $client->send($result)->then(function ($resp) use ($response) {
-                echo 'I completed! ' . $response;
-            });
-            //$response->status = $result->getStatusCode();
-            //$response->message = $result->getBody()->getContents();
-        /*} catch (ClientException $e) {
+        try {
+            $request = $client->createRequest($verb, 'https://api.descomsms.com/api/'.$path, $httpData);
+            $result = $client->send($request);
+            $response->status = $result->getStatusCode();
+            $response->message = $result->getBody()->getContents();
+        } catch (ClientException $e) {
             $response->status = $e->getResponse()->getStatusCode();
             $response->message = $e->getResponse()->getBody(true);
         } catch (RequestException $e) {
             $response->status = 500;
             $response->message = $e->getMessage();
-        }*/
+        }
 
         return $response;
     }
