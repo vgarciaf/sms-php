@@ -23,7 +23,7 @@ class Sms
      *
      * @var string
      */
-    private $app = 'php-sms v1.0.9';
+    private $app = 'php-sms v1.0.10';
 
     /**
      * Define if then sent is dryrun.

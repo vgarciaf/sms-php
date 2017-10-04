@@ -39,15 +39,13 @@ class Message
     {
         $destinations = (array) $to;
 
-        if ($control) {
-            foreach ($destinations as $destination) {
-                if (in_array($destinations, $this->destinations)) {
-                    throw DestinationAlreadyExits::create($destination);
-                }
+        foreach ($destinations as $destination) {
+            if ($control && in_array($destinations, $this->destinations)) {
+                throw DestinationAlreadyExits::create($destination);
+            } else {
+                $this->destinations[] = $destination;
             }
         }
-
-        $this->destinations[] = $destination;
 
         return $this;
     }
