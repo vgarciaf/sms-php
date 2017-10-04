@@ -31,7 +31,7 @@ class Message
      * Set the "destination" of the message.
      *
      * @param string|array $to
-     * @param boolean $control
+     * @param bool         $control
      *
      * @return $this
      */

@@ -112,7 +112,7 @@ class Sms
      * Add a message in sent.
      *
      * @param \Descom\Sms\Message $message
-     * @param boolean $control
+     * @param bool                $control
      *
      * @return $this
      */
