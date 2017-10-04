@@ -31,20 +31,23 @@ class Message
      * Set the "destination" of the message.
      *
      * @param string|array $to
+     * @param boolean $control
      *
      * @return $this
      */
-    public function addTo($to)
+    public function addTo($to, $control = true)
     {
         $destinations = (array) $to;
 
-        foreach ($destinations as $destination) {
-            if (in_array($destinations, $this->destinations)) {
-                throw DestinationAlreadyExits::create($destination);
-            } else {
-                $this->destinations[] = $destination;
+        if ($control) {
+            foreach ($destinations as $destination) {
+                if (in_array($destinations, $this->destinations)) {
+                    throw DestinationAlreadyExits::create($destination);
+                }
             }
         }
+
+        $this->destinations[] = $destination;
 
         return $this;
     }
