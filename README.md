@@ -1,8 +1,8 @@
-[![Build Status](https://img.shields.io/travis/descom-es/php-sms/master.svg?style=flat-square)](https://travis-ci.org/descom-es/php-sms)
+[![Build Status](https://img.shields.io/travis/descom-es/sms-php/master.svg?style=flat-square)](https://travis-ci.org/descom-es/sms-php)
 [![StyleCI](https://styleci.io/repos/103265304/shield)](https://styleci.io/repos/103265304)
-[![Latest Stable Version](https://poser.pugx.org/descom/php-sms/version?format=flat-square)](https://packagist.org/packages/descom/php-sms)
-[![Total Downloads](https://poser.pugx.org/descom/php-sms/downloads?format=flat-square)](https://packagist.org/packages/descom/php-sms)
-[![License](https://poser.pugx.org/descom/php-sms/license?format=flat-square)](https://packagist.org/packages/descom/php-sms)
+[![Latest Stable Version](https://poser.pugx.org/descom/sms-php/version?format=flat-square)](https://packagist.org/packages/descom/sms-php)
+[![Total Downloads](https://poser.pugx.org/descom/sms-php/downloads?format=flat-square)](https://packagist.org/packages/descom/sms-php)
+[![License](https://poser.pugx.org/descom/sms-php/license?format=flat-square)](https://packagist.org/packages/descom/sms-php)
 # PHP SMS sending
 
 SMS Library for sending text messages to mobile numbers worldwide from your own application via [Descom SMS](https://www.descomsms.com) gateway.
@@ -16,7 +16,7 @@ Our [API documentation](https://api.descomsms.com) is available [here](https://a
 You can install it with composer:
 
 ```bash
-composer require descom/php-sms
+composer require descom/sms-php
 ```
 
 ## Usage
