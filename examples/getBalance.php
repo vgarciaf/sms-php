@@ -1,6 +1,7 @@
 <?php
 
 use Descom\Sms\Auth\AuthUser;
+use Descom\Sms\Exceptions\RequestFail;
 use Descom\Sms\Sms;
 
 require '../vendor/autoload.php';
@@ -12,6 +13,10 @@ if ($argc < 3) {
 
 $sms = new Sms(new AuthUser($argv[1], $argv[2]));
 
-$balance = $sms->getBalance();
+try {
+    $balance = $sms->getBalance();
 
-echo 'Balance: '.$balance."\n";
+    echo 'Balance: '.$balance."\n";
+} catch (RequestFail $e) {
+    echo 'Error nº: '.$e->getCode().'; message: '.$e->getMessage()."\n";
+}

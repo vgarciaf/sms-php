@@ -1,6 +1,9 @@
 <?php
 
 use Descom\Sms\Auth\AuthUser;
+use Descom\Sms\Exceptions\DestinationAlreadyExists;
+use Descom\Sms\Exceptions\MessageTextAlreadyExists;
+use Descom\Sms\Exceptions\RequestFail;
 use Descom\Sms\Message;
 use Descom\Sms\Sms;
 
@@ -15,10 +18,18 @@ $sms = new Sms(new AuthUser($argv[1], $argv[2]));
 
 $message = new Message();
 
-$message->addTo($argv[3])->setText($argv[4]);
+try {
+    $message->addTo($argv[3])->setText($argv[4]);
 
-$result = $sms->addMessage($message)
-        ->setDryrun(true)
-        ->send();
+    $result = $sms->addMessage($message)
+            ->setDryrun(false)
+            ->send();
 
-var_dump($result);
+    var_dump($result);
+} catch (RequestFail $e) {
+    echo 'Error nº: '.$e->getCode().'; message: '.$e->getMessage()."\n";
+} catch (DestinationAlreadyExists $e) {
+    echo 'Error: '.$e->getMessage()."\n";
+} catch (MessageTextAlreadyExists $e) {
+    echo 'Error: '.$e->getMessage()."\n";
+}
