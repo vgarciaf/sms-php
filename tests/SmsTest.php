@@ -109,7 +109,7 @@ class SmsTest extends TestCase
         $senderID = $sms->getSenderID();
 
         $this->assertContains(
-            'info',
+            'INFO',
             $senderID
         );
     }
