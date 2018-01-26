@@ -27,5 +27,8 @@
         "psr-4": {
             "Descom\\Sms\\Test\\": "tests"
         }
+    },
+    "scripts": {
+        "test": "phpunit"
     }
 }
