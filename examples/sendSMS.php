@@ -27,7 +27,17 @@ try {
 
     var_dump($result);
 } catch (RequestFail $e) {
-    echo 'Error nº: '.$e->getCode().'; message: '.$e->getMessage()."\n";
+    if ($e->getCode() == 401 ) {
+        echo 'Auth Fail; message: '.$e->getMessage()."\n";
+    } else if ($e->getCode() == 402) {
+        echo 'With credits; message: '.$e->getMessage()."\n";
+    } else if ($e->getCode() == 403) {
+        echo 'Auth Fail; message: '.$e->getMessage()."\n";
+    } else if ($e->getCode() == 422) {
+        echo 'Invalid data; message: '.$e->getMessage()."\n";
+    } else {
+        echo 'Error nº: '.$e->getCode().'; message: '.$e->getMessage()."\n";
+    }
 } catch (DestinationAlreadyExists $e) {
     echo 'Error: '.$e->getMessage()."\n";
 } catch (MessageTextAlreadyExists $e) {
