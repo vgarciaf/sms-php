@@ -102,6 +102,29 @@ class SmsTest extends TestCase
     }
 
     /** @test */
+    public function test_if_get_id_of_shipment_when_send_sms_clean_after_send()
+    {
+        $sms = new Sms($this->authOK);
+
+        $message = new Message();
+
+        $message->addTo('666666666')->setText('test sms text');
+
+        $result = $sms->addMessage($message)
+                ->setDryrun(true)
+                ->send();
+
+        $message->addTo('666666667')->setText('test sms text');
+
+        $result = $sms->addMessage($message)
+                ->setDryrun(true)
+                ->send();
+
+        $this->assertGreaterThan(1, $result->id);
+        $this->assertEquals(1, $result->num_sms);
+    }
+
+    /** @test */
     public function test_if_senderID_info_is_authorized()
     {
         $sms = new Sms($this->authOK);

@@ -89,6 +89,20 @@ class Message
     }
 
     /**
+     * Clean class data.
+     *
+     * @return $this
+     */
+    public function clean()
+    {
+        $this->text = '';
+        $this->destinations = [];
+        $this->senderID = '';
+
+        return $this;
+    }
+
+    /**
      * Get array to send message.
      *
      * @return array

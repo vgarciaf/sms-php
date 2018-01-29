@@ -188,6 +188,7 @@ class Sms
 
         foreach ($this->messages as $message) {
             $data['messages'][] = $message->getArray();
+            $message->clean();
         }
 
         if (isset($this->dryrun) && $this->dryrun) {
