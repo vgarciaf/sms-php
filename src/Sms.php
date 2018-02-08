@@ -185,7 +185,7 @@ class Sms
 
         if ($details) {
             $response = $http->sendHttp('POST', 'senderID', $this->headers, [
-                'details' => 1
+                'details' => 1,
             ]);
         } else {
             $response = $http->sendHttp('GET', 'senderID', $this->headers);
