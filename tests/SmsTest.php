@@ -102,6 +102,23 @@ class SmsTest extends TestCase
     }
 
     /** @test */
+    public function test_if_get_id_of_shipment_when_send_sms_with_not_force_serder()
+    {
+        $sms = new Sms($this->authOK);
+
+        $message = new Message();
+
+        $message->addTo('6666666')->setText('test sms text');
+
+        $result = $sms->addMessage($message)
+                ->setDryrun(true)
+                ->setSenderNotForce(true)
+                ->send();
+
+        $this->assertGreaterThan(1, $result->id);
+    }
+
+    /** @test */
     public function test_if_get_id_of_shipment_when_send_sms_clean_after_send()
     {
         $sms = new Sms($this->authOK);
@@ -148,5 +165,15 @@ class SmsTest extends TestCase
             'perverso',
             $senderID
         );
+    }
+
+    /** @test */
+    public function test_if_senderID_info_is_authorized_with_details()
+    {
+        $sms = new Sms($this->authOK);
+
+        $senderID = $sms->getSenderID(true);
+
+        $this->assertContains('INFO', $senderID->platform);
     }
 }

@@ -40,6 +40,13 @@ class Sms
     private $sanitize = false;
 
     /**
+     * Define if the sender no must be force in server.
+     *
+     * @var bool
+     */
+    private $sender_not_force = false;
+
+    /**
      * Define if then messages for sent.
      *
      * @var array
@@ -109,6 +116,20 @@ class Sms
     }
 
     /**
+     * Set if sender no must be force in server.
+     *
+     * @param bool $sanitize
+     *
+     * @return $this
+     */
+    public function setSenderNotForce($sender_not_force)
+    {
+        $this->sender_not_force = $sender_not_force;
+
+        return $this;
+    }
+
+    /**
      * Add a message in sent.
      *
      * @param \Descom\Sms\Message $message
@@ -158,11 +179,17 @@ class Sms
      *
      * @return array
      */
-    public function getSenderID()
+    public function getSenderID($details = false)
     {
         $http = new Http();
 
-        $response = $http->sendHttp('GET', 'senderID', $this->headers);
+        if ($details) {
+            $response = $http->sendHttp('POST', 'senderID', $this->headers, [
+                'details' => 1
+            ]);
+        } else {
+            $response = $http->sendHttp('GET', 'senderID', $this->headers);
+        }
 
         if ($response->status == 200) {
             $data = json_decode($response->message);
@@ -199,6 +226,10 @@ class Sms
 
         if (isset($this->sanitize) && $this->sanitize) {
             $data['sanitize'] = true;
+        }
+
+        if (isset($this->sender_not_force) && $this->sender_not_force) {
+            $data['sender_not_force'] = true;
         }
 
         $response = $http->sendHttp('POST', 'sms/send', $this->headers, $data);
