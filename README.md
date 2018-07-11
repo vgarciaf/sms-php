@@ -90,10 +90,10 @@ print_r($senderID);
 
 ### Setup your sender ID
 
-Alphanumeric sender ID allows you to set your name or business brand as the sender ID. Use the function `setSenderID` at `Descom\Sms\Sms` class
+Alphanumeric sender ID allows you to set your name or business brand as the sender ID. Use the function `setSenderID` at `Descom\Sms\Message` class
 
 ```php
-$sms->setSenderID('replace_by_sender_of_message');
+$message->setSenderID('replace_by_sender_of_message');
 ```
 Note your sender ID should previously be added in your Descom SMS account setup.
 
