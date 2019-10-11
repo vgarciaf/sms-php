@@ -2,10 +2,10 @@
 
 namespace Descom\Sms;
 
-use Descom\Sms\Auth\AuthInterface as Auth;
-use Descom\Sms\Exceptions\MessageTextAlreadyExits;
-use Descom\Sms\Exceptions\RequestFail;
 use Descom\Sms\Http\Http;
+use Descom\Sms\Exceptions\RequestFail;
+use Descom\Sms\Auth\AuthInterface as Auth;
+use Descom\Sms\Exceptions\MessageTextAlreadyExists;
 
 class Sms
 {
@@ -144,7 +144,7 @@ class Sms
         if ($control) {
             foreach ($this->messages as $cur_message) {
                 if ($cur_message->getText() == $message_text) {
-                    throw new MessageTextAlreadyExits($message_text);
+                    throw new MessageTextAlreadyExists($message_text);
                 }
             }
         }
@@ -169,9 +169,8 @@ class Sms
             $data = json_decode($response->message);
 
             return $data->balance;
-        } else {
-            throw new RequestFail($response->message, $response->status);
         }
+        throw new RequestFail($response->message, $response->status);
     }
 
     /**
@@ -195,9 +194,8 @@ class Sms
             $data = json_decode($response->message);
 
             return $data;
-        } else {
-            throw new RequestFail($response->message, $response->status);
         }
+        throw new RequestFail($response->message, $response->status);
     }
 
     /**
@@ -236,8 +234,7 @@ class Sms
 
         if ($response->status == 200) {
             return json_decode($response->message);
-        } else {
-            throw new RequestFail($response->message, $response->status);
         }
+        throw new RequestFail($response->message, $response->status);
     }
 }
