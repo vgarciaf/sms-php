@@ -2,10 +2,10 @@
 
 namespace Descom\Sms;
 
-use Descom\Sms\Http\Http;
-use Descom\Sms\Exceptions\RequestFail;
 use Descom\Sms\Auth\AuthInterface as Auth;
 use Descom\Sms\Exceptions\MessageTextAlreadyExists;
+use Descom\Sms\Exceptions\RequestFail;
+use Descom\Sms\Http\Http;
 
 class Sms
 {
@@ -130,7 +130,7 @@ class Sms
     }
 
     /**
-     * Add headers
+     * Add headers.
      *
      * @param string $name
      * @param string $value
