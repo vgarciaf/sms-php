@@ -2,10 +2,10 @@
 
 namespace Descom\Sms;
 
+use Descom\Sms\Http\Http;
+use Descom\Sms\Exceptions\RequestFail;
 use Descom\Sms\Auth\AuthInterface as Auth;
 use Descom\Sms\Exceptions\MessageTextAlreadyExists;
-use Descom\Sms\Exceptions\RequestFail;
-use Descom\Sms\Http\Http;
 
 class Sms
 {
@@ -125,6 +125,23 @@ class Sms
     public function setSenderNotForce($sender_not_force)
     {
         $this->sender_not_force = $sender_not_force;
+
+        return $this;
+    }
+
+    /**
+     * Add headers
+     *
+     * @param string $name
+     * @param string $value
+     *
+     * @return $this
+     */
+    public function addHeader($name, $value)
+    {
+        $this->headers = array_merge($this->headers, [
+            $name => $value,
+        ]);
 
         return $this;
     }
