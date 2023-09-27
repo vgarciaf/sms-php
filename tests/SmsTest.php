@@ -14,7 +14,7 @@ class SmsTest extends TestCase
 
     protected $authBAD;
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
 
@@ -42,10 +42,7 @@ class SmsTest extends TestCase
 
         $balance = $sms->getBalance();
 
-        $this->assertInternalType(
-            is_int($balance) ? 'int' : 'double',
-            $balance
-        );
+        is_int($balance) ? $this->assertIsInt($balance) : $this->assertIsFloat($balance);
     }
 
     /** @test */
@@ -59,7 +56,7 @@ class SmsTest extends TestCase
             $message->addTo('6666666')->setText('test sms text');
 
             $result = $sms->addMessage($message)
-                    ->send();
+                ->send();
 
             $this->assertTrue(false);
         } catch (RequestFail $e) {
@@ -78,7 +75,7 @@ class SmsTest extends TestCase
             $message->addTo('6666666a')->setText('test sms text');
 
             $result = $sms->addMessage($message)
-                    ->send();
+                ->send();
             $this->assertTrue(false);
         } catch (RequestFail $e) {
             $this->assertEquals($e->getCode(), 422);
@@ -95,8 +92,8 @@ class SmsTest extends TestCase
         $message->addTo('6666666')->setText('test sms text');
 
         $result = $sms->addMessage($message)
-                ->setDryrun(true)
-                ->send();
+            ->setDryrun(true)
+            ->send();
 
         $this->assertGreaterThan(1, $result->id);
     }
@@ -111,9 +108,9 @@ class SmsTest extends TestCase
         $message->addTo('6666666')->setText('test sms text');
 
         $result = $sms->addMessage($message)
-                ->setDryrun(true)
-                ->setSenderNotForce(true)
-                ->send();
+            ->setDryrun(true)
+            ->setSenderNotForce(true)
+            ->send();
 
         $this->assertGreaterThan(1, $result->id);
     }
@@ -128,14 +125,14 @@ class SmsTest extends TestCase
         $message->addTo('666666666')->setText('test sms text');
 
         $result = $sms->addMessage($message)
-                ->setDryrun(true)
-                ->send();
+            ->setDryrun(true)
+            ->send();
 
         $message->addTo('666666667')->setText('test sms text');
 
         $result = $sms->addMessage($message)
-                ->setDryrun(true)
-                ->send();
+            ->setDryrun(true)
+            ->send();
 
         $this->assertGreaterThan(1, $result->id);
         $this->assertEquals(1, $result->num_sms);
